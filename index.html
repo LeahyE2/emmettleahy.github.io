@@ -1,1 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- EDIT: page title and description (shown in browser tabs and search results) -->
+  <title>Emmett Leahy | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity and GRC projects written up as short reports: CTF write-ups, monitoring, networking and risk work by Emmett Leahy.">
+
+  <!-- Link previews (LinkedIn, Slack, etc.). To add an image, put a 1200x630 PNG in images/ and add:
+       <meta property="og:image" content="https://emmettleahy.ie/images/og-cover.png"> -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emmett Leahy | Cybersecurity Portfolio">
+  <meta property="og:description" content="Security projects written up as short reports.">
+  <meta property="og:url" content="https://emmettleahy.ie/">
+
+  <link rel="icon" href="images/Portfolio-Website.png" type="image/svg+xml">
+  <link rel="preload" href="fonts/ibm-plex-serif-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Applies the saved theme before the page paints, so there is no flash. Leave as is. -->
+  <script>
+    try {
+      var t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+
+<body id="top">
+  <div class="spotlight" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="progress" id="progress" aria-hidden="true"></div>
+    <div class="container header-row">
+      <!-- EDIT: your name and the small line under it -->
+      <a class="brand" href="#top">
+        <img class="brand-mark" src="images/images.jpeg" width="32" height="32" alt="">
+        <span class="brand-text">
+          <span class="brand-name">Emmett Leahy</span>
+          <span class="brand-model">Security Portfolio</span>
+        </span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a class="port" href="#projects"><span class="port-led" aria-hidden="true"></span><span class="port-jack" aria-hidden="true"></span><span class="port-name">Projects</span></a>
+        <a class="port" href="#about"><span class="port-led" aria-hidden="true"></span><span class="port-jack" aria-hidden="true"></span><span class="port-name">About</span></a>
+        <a class="port" href="#contact"><span class="port-led" aria-hidden="true"></span><span class="port-jack" aria-hidden="true"></span><span class="port-name">Contact</span></a>
+      </nav>
+      <div class="header-tools">
+        <!-- EDIT: your availability. Delete this link if you would rather not show it. -->
+        <a class="avail" href="#contact"><span class="avail-dot" aria-hidden="true"></span></a>
+        <button class="tool-btn console-toggle" id="console-toggle" type="button" aria-expanded="false" aria-controls="console" title="Open the console (press `)">
+          <span aria-hidden="true">&gt;_</span><span class="tool-label">Console</span>
+        </button>
+        <button class="tool-btn theme-toggle" id="theme-toggle" type="button">
+          <span class="switch" aria-hidden="true"><span class="switch-knob"></span></span>
+          <span class="tool-label switch-label">Day mode</span>
+        </button>
+        <button class="tool-btn menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+
+
+<div class="inline-container">
+  <section class="about-section">
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="images/Portfolio-Website.png" alt="Emmett Leahy" />
+    </div>
+    <div class="text-wrapper">
+      <p>
+        <strong>Emmett Leahy</strong>, a Cybercrime &amp; IT Security student with project in Incident Handling, Systems Infrastructure, Networking and reconnaissance aswell asexperience within Enterprise Security. Each entry below is a short report on projects: the problem, what I did, what I found, and what I would change.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+          <div class="hero-actions rise rise-3">
+            <a class="btn" href="#projects">Browse projects</a>
+            <button class="btn btn-quiet" id="open-console" type="button">Open the console</button>
+          </div>
+        </div>
+
+</section>
+
+        <figure class="netmap rise rise-1">
+          <svg viewBox="8 54 584 410" role="group" aria-label="Network map of this site. Its nodes link to the projects, about and contact sections and open the console.">
+            <g aria-hidden="true">
+              <rect class="nm-zone" x="252" y="62" width="330" height="394" rx="10"/>
+              <text class="nm-zone-label" x="266" y="86">internal network</text>
+              <text class="nm-zone-label" x="22" y="86">untrusted</text>
+            </g>
+            <g class="nm-links" aria-hidden="true">
+              <path id="l-in" class="nm-line" d="M102 240H161"/>
+              <path id="l-fw" class="nm-line" d="M219 240H280"/>
+              <path id="l-projects" class="nm-line l-projects" d="M380 240H430V120H493"/>
+              <path id="l-about" class="nm-line l-about" d="M380 240H491"/>
+              <path id="l-contact" class="nm-line l-contact" d="M380 240H430V360H489"/>
+              <path id="l-console" class="nm-line l-console" d="M330 260V344"/>
+            </g>
+            <g class="nm-packets" aria-hidden="true">
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#l-in"/></animateMotion></rect>
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="1.7s" repeatCount="indefinite"><mpath href="#l-fw"/></animateMotion></rect>
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="2.6s" repeatCount="indefinite"><mpath href="#l-projects"/></animateMotion></rect>
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="1.9s" repeatCount="indefinite"><mpath href="#l-about"/></animateMotion></rect>
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="2.9s" repeatCount="indefinite"><mpath href="#l-contact"/></animateMotion></rect>
+              <rect class="packet" x="-4" y="-4" width="8" height="8" rx="2"><animateMotion dur="1.6s" repeatCount="indefinite"><mpath href="#l-console"/></animateMotion></rect>
+            </g>
+
+            <!-- Decorative nodes -->
+            <g aria-hidden="true">
+              <g transform="translate(35 215)"><g class="lift" style="--n:0"><path class="nm-shape" d="M20 44a13 13 0 0 1-1-26 17 17 0 0 1 32-3 14 14 0 0 1 2 29z"/></g></g>
+              <text class="nm-sub" x="70" y="288" text-anchor="middle">Internet</text>
+              <g transform="translate(155 205)"><g class="lift" style="--n:1">
+                <rect class="nm-shape" x="6" y="10" width="58" height="50" rx="3"/>
+                <path class="nm-detail" d="M6 27H64M6 44H64M35 10V27M20 27V44M50 27V44M35 44V60"/>
+              </g></g>
+              <text class="nm-sub" x="190" y="298" text-anchor="middle">Policy</text>
+              <g transform="translate(280 220)"><g class="lift" style="--n:2">
+                <rect class="nm-shape" x="0" y="0" width="100" height="40" rx="4"/>
+                <g class="nm-fill-ports">
+                  <rect x="10" y="18" width="10" height="10" rx="1"/><rect x="24" y="18" width="10" height="10" rx="1"/><rect x="38" y="18" width="10" height="10" rx="1"/>
+                  <rect x="52" y="18" width="10" height="10" rx="1"/><rect x="66" y="18" width="10" height="10" rx="1"/><rect x="80" y="18" width="10" height="10" rx="1"/>
+                </g>
+                <circle class="nm-led" cx="15" cy="10" r="2.2"/><circle class="nm-led" cx="29" cy="10" r="2.2"/><circle class="nm-led" cx="43" cy="10" r="2.2"/>
+                <circle class="nm-led" cx="57" cy="10" r="2.2"/><circle class="nm-led nm-led-accent" cx="71" cy="10" r="2.2"/><circle class="nm-led" cx="85" cy="10" r="2.2"/>
+              </g></g>
+              <text class="nm-sub" x="330" y="210" text-anchor="middle">Network</text>
+            </g>
+
+            <!-- Section nodes (links) -->
+            <a class="node n-projects" href="#projects" aria-label="Projects: the case folders">
+              <g transform="translate(485 85)"><g class="lift" style="--n:3">
+                <rect class="nm-ring" x="-2" y="-8" width="74" height="86" rx="8"/>
+                <rect class="nm-shape" x="8" y="0" width="54" height="70" rx="4"/>
+                <rect class="nm-fill" x="14" y="7" width="42" height="16" rx="2"/><rect class="nm-fill" x="14" y="27" width="42" height="16" rx="2"/><rect class="nm-fill" x="14" y="47" width="42" height="16" rx="2"/>
+                <circle class="nm-led" cx="21" cy="15" r="2.5"/><circle class="nm-led" cx="21" cy="35" r="2.5"/><circle class="nm-led nm-led-accent" cx="21" cy="55" r="2.5"/>
+                <path class="nm-detail" d="M30 15H50M30 35H50M30 55H50"/>
+              </g></g>
+              <text class="nm-text" x="520" y="180" text-anchor="middle">Projects</text>
+              <text class="nm-sub" x="520" y="197" text-anchor="middle" id="nm-count">case files</text>
+            </a>
+            <a class="node n-about" href="#about" aria-label="About me">
+              <g transform="translate(485 205)"><g class="lift" style="--n:4">
+                <rect class="nm-ring" x="-2" y="-2" width="74" height="76" rx="8"/>
+                <rect class="nm-shape" x="6" y="4" width="58" height="40" rx="3"/>
+                <rect class="nm-fill" x="11" y="9" width="48" height="30" rx="1"/>
+                <path class="nm-detail" d="M16 17H44M16 23H52M16 29H38"/>
+                <rect class="nm-shape" x="29" y="44" width="12" height="8"/><path class="nm-detail nm-thick" d="M20 56H50"/>
+                <rect class="nm-shape" x="8" y="60" width="54" height="8" rx="2"/>
+              </g></g>
+              <text class="nm-text" x="520" y="298" text-anchor="middle">About</text>
+              <text class="nm-sub" x="520" y="315" text-anchor="middle">who is behind it</text>
+            </a>
+            <a class="node n-contact" href="#contact" aria-label="Contact">
+              <g transform="translate(485 325)"><g class="lift" style="--n:5">
+                <rect class="nm-ring" x="-2" y="6" width="74" height="58" rx="8"/>
+                <rect class="nm-shape" x="4" y="14" width="62" height="42" rx="4"/>
+                <path class="nm-detail" d="M4 18L35 40L66 18"/>
+                <circle class="nm-led nm-led-accent" cx="58" cy="50" r="2.5"/>
+              </g></g>
+              <text class="nm-text" x="520" y="418" text-anchor="middle">Contact</text>
+              <text class="nm-sub" x="520" y="435" text-anchor="middle">send a packet</text>
+            </a>
+            <a class="node n-console" href="#console" aria-label="Open the console" data-console>
+              <g transform="translate(295 340)"><g class="lift" style="--n:6">
+                <rect class="nm-ring" x="-6" y="-2" width="82" height="62" rx="8"/>
+                <rect class="nm-shape" x="10" y="6" width="50" height="36" rx="3"/>
+                <rect class="nm-fill" x="14" y="10" width="42" height="28" rx="1"/>
+                <text class="nm-prompt" x="19" y="30">&gt;_</text>
+                <rect class="nm-shape" x="2" y="44" width="66" height="8" rx="3"/>
+              </g></g>
+              <text class="nm-text" x="330" y="424" text-anchor="middle">Console</text>
+              <text class="nm-sub" x="330" y="441" text-anchor="middle">press the backtick key</text>
+            </a>
+          </svg>
+          <figcaption>Fig. 1. Topology of this site. Select a node to travel there.</figcaption>
+        </figure>
+      </div>
+
+      <!-- EDIT: the scrolling band. Keep both lists identical so the loop is seamless. -->
+     
+    </section>
+
+    <!-- ================= PROJECT REGISTER ================= -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p class="lead">
+            Each folder opens into a short report on this page. Filter by domain, search by tool, or ask the terminal above.
+          </p>
+        </div>
+
+        <div class="register-tools">
+          <div class="search">
+            <label class="sr-only" for="search">Search projects</label>
+            <input id="search" type="search" placeholder="Search projects, tools, frameworks" autocomplete="off">
+          </div>
+          <div class="filters" id="filters" role="group" aria-label="Filter by domain"></div>
+          <p class="count" id="register-count" aria-live="polite"></p>
+        </div>
+
+        <ol class="folders" id="register-list"></ol>
+        <p class="register-empty" id="register-empty" hidden>
+          Nothing here but redacted bars. <button class="chip" id="clear-filters" type="button">Clear filters</button>
+        </p>
+        <div class="register-error" id="register-error" hidden></div>
+        <noscript><p class="register-error">The project folders need JavaScript. Please enable it to browse them.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <!-- EDIT: swap images/avatar.svg for your own photo, e.g. images/profile.jpg, and update the src -->
+          <img class="avatar" src="images/images.jpeg" width="352" height="352" padding=20px; alt="Portrait placeholder with the initials EL" >
+          <div class="about-text">
+            <h2 id="about-title">About</h2>
+            <!-- EDIT: your story, in your own words -->
+            <p>
+              I'm in my Third year of a Cybercrime & IT Security. I learn fastest by building
+              things and then writing down what worked, so most of the work here started as a lab, a
+              competition or a college project.
+            </p>
+            <p>
+              I'm drawn to the governance side of security: how policy, risk and technical controls fit
+              together, and how to explain that clearly to people who don't live in a terminal.
+            </p>
+          </div>
+        </div>
+
+        <!-- EDIT: skills. One block per group; add or remove list items. -->
+        <div class="skills">
+          <div>
+            <h3>Governance and risk</h3>
+            <ul>
+              <li>Risk assessment and registers</li>
+              <li>Security policy writing</li>
+              <li>Framework mapping (NIST, ISO 27001, NIS2)</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Technical practice</h3>
+            <ul>
+              <li>CTF competitions</li>
+              <li>Networking and Cisco Packet Tracer</li>
+              <li>Monitoring with Prometheus and Grafana</li>
+              <li>Linux hardening and Fail2ban</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Development</h3>
+            <ul>
+              <li>HTML, CSS and JavaScript</li>
+              <li>PHP and MySQL</li>
+              <li>Assembly programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-title">Contact</h2>
+          <p class="lead">The best way to reach me is email. I read everything and reply within a few days.</p>
+        </div>
+        <!-- EDIT: replace the placeholder address and profile links -->
+        <a class="contact-email" href="mailto:leahyemmett@protonmail.com">Email Me</a>
+        <ul class="contact-list">
+          <li><a href="https://www.linkedin.com/in/emmettleahy/" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/leahye2" rel="noopener">GitHub</a></li>
+          <!-- Add your CV: put a PDF in a "cv" folder, then remove the comment markers around this line.
+          <li><a href="cv/emmett-leahy-cv.pdf">CV (PDF)</a></li>
+          -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <!-- EDIT: the closing line -->
+        <p class="footer-lead">Have a security problem that needs clear writing? Or a team that could use a student who documents everything?</p>
+        <a class="footer-mail" id="footer-mail" href="#contact">Get in touch</a>
+      </div>
+      <nav class="footer-col" aria-label="Footer">
+        <h2>Explore</h2>
+        <ul><li><a href="#projects">Projects</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li><li><a href="#top">Top of page</a></li></ul>
+      </nav>
+      <div class="footer-col">
+        <h2>Elsewhere</h2>
+        <ul id="footer-elsewhere"></ul>
+      </div>
+      <div class="footer-col">
+        <h2>Right now</h2>
+        <p class="footer-now">Local time in Ireland<br><time id="clock">--:--</time></p>
+        <p class="footer-now">Open to placement roles</p>
+      </div>
+    </div>
+    <div class="container footer-base">
+      <p>&copy; <span id="year">2026</span> Emmett Leahy</p>
+      <p>Plain HTML, CSS and JavaScript, set in IBM Plex. No framework was harmed.</p>
+      <button class="btn btn-quiet to-top" id="to-top" type="button">Back to top</button>
+    </div>
+    <div class="wordmark" aria-hidden="true">Emmett Leahy</div>
+  </footer>
+  <!-- Hello, curious one. You read source code, which is a good sign. ZmxhZ3t2aWV3LXNvdXJjZS1pcy1hLXNraWxsfQ== -->
+
+  <div class="console" id="console" hidden>
+    <aside class="glance" id="glance" aria-labelledby="glance-title">
+              <h2 id="glance-title">At a glance</h2>
+              <dl>
+                <div class="row"><dt>Studying</dt><dd>Computing and cybersecurity, SETU</dd></div>
+                <div class="row"><dt>Focus</dt><dd>Governance, risk and compliance</dd></div>
+                <div class="row"><dt>Hands-on</dt><dd>CTFs, networking, monitoring, web development</dd></div>
+                <div class="row"><dt>Looking for</dt><dd>A security placement or entry-level role</dd></div>
+                <div class="row"><dt>Based in</dt><dd>Ireland</dd></div>
+              </dl>
+            </aside>
+  </div>
+
+  <!-- ================= READER (opens a project) ================= -->
+  <dialog class="reader" id="reader" aria-labelledby="reader-title">
+    <div class="sheet" id="reader-sheet">
+      <div class="reader-bar">
+        <button class="btn btn-quiet" id="reader-close" type="button">Back to projects</button>
+        <div class="reader-tools">
+          <span class="reader-status" id="reader-status" role="status"></span>
+          <button class="btn btn-quiet" id="reader-copy" type="button">Copy link</button>
+        </div>
+      </div>
+      <div class="reader-scroll" id="reader-scroll">
+        <article class="doc">
+          <header class="doc-head">
+            <div class="doc-top"><p class="doc-ref" id="reader-ref"></p><div id="reader-stamp" aria-hidden="true"></div></div>
+            <h2 id="reader-title"></h2>
+            <p class="doc-summary" id="reader-summary"></p>
+            <dl class="doc-meta" id="reader-meta"></dl>
+          </header>
+          <figure class="doc-cover" id="reader-cover" hidden><img id="reader-cover-img" src="" alt=""></figure>
+          <div class="prose" id="reader-body"></div>
+          <nav class="pager" aria-label="More projects">
+            <a class="pager-link is-newer" id="reader-newer" href="#" hidden><span class="pager-label">Newer entry</span><span class="pager-title"></span></a>
+            <a class="pager-link is-older" id="reader-older" href="#" hidden><span class="pager-label">Older entry</span><span class="pager-title"></span></a>
+          </nav>
+        </article>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Libraries are stored in this repo (js/vendor) instead of loaded from a CDN. -->
+  <script src="js/vendor/marked.umd.js"></script>
+  <script src="js/vendor/purify.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

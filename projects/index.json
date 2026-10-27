@@ -1,0 +1,64 @@
+{
+  "projects": [
+    {
+      "id": "P-005",
+      "slug": "ctf-writeup-method",
+      "title": "How I structure a CTF write-up",
+      "summary": "The template I use to turn a solved challenge into something a reviewer, or my future self, can follow.",
+      "domain": "CTF",
+      "tags": ["Write-ups", "Documentation"],
+      "date": "2026-10-15",
+      "status": "Complete",
+      "cover": "images/cover-writing.svg",
+      "coverAlt": "A document page with lines of text and two black redaction bars."
+    },
+    {
+      "id": "P-004",
+      "slug": "scada-grc-policy",
+      "title": "Air-gapped SCADA through a GRC lens",
+      "summary": "Why the air gap failed in Stuxnet, and how IEC 62443, NIST SP 800-82 and NIS2 would change the policy answer.",
+      "domain": "GRC",
+      "tags": ["IEC 62443", "NIST SP 800-82", "NIS2"],
+      "date": "2026-10-01",
+      "status": "Planned",
+      "cover": "images/cover-scada.svg",
+      "coverAlt": "Two network zones separated by a dashed gap, with a removable drive crossing between them."
+    },
+    {
+      "id": "P-003",
+      "slug": "packet-tracer-network",
+      "title": "Segmented enterprise network in Packet Tracer",
+      "summary": "A two-site design with VLANs, NAT and a site-to-site VPN, built and tested as a group project.",
+      "domain": "Networking",
+      "tags": ["Cisco Packet Tracer", "VLANs", "NAT", "VPN"],
+      "date": "2026-09-12",
+      "status": "In progress",
+      "cover": "images/cover-network.svg",
+      "coverAlt": "A router connected to two switches, each with several colour-coded end devices."
+    },
+    {
+      "id": "P-002",
+      "slug": "homelab-monitoring",
+      "title": "Monitoring and intrusion prevention for a homelab",
+      "summary": "Prometheus and Grafana for visibility, Fail2ban for response, and what I learned about alert fatigue.",
+      "domain": "Homelab",
+      "tags": ["Prometheus", "Grafana", "Fail2ban", "Linux"],
+      "date": "2026-05-18",
+      "status": "Complete",
+      "cover": "images/cover-monitoring.svg",
+      "coverAlt": "A line chart with a sharp spike crossing a dashed alert threshold."
+    },
+    {
+      "id": "P-001",
+      "slug": "ctf-web-writeup",
+      "title": "Web challenge walkthrough: broken authentication",
+      "summary": "How a login form gave up its secrets, what it says about input handling, and the fix a developer should ship.",
+      "domain": "CTF",
+      "tags": ["Web security", "OWASP Top 10", "Write-up"],
+      "date": "2026-02-10",
+      "status": "Complete",
+      "cover": "images/cover-ctf.svg",
+      "coverAlt": "A grid of hexadecimal bytes with a few highlighted in blue."
+    }
+  ]
+}
