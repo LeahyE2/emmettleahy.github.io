@@ -1,6 +1,7 @@
 # Portfolio site
 
 A plain HTML, CSS and JavaScript portfolio for GitHub Pages. No build step and no frameworks.
+
 Projects are Markdown files shown as case folders on the home page. Each one opens into a paper sheet on the same page.
 
 ## Folder map
