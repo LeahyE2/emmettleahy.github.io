@@ -1,8 +1,8 @@
-> **Sample entry.** Replace this text with your own write-up. The headings below are a suggested structure, not a rule. Only publish write-ups for challenges that are retired or whose event allows sharing, and never include a live flag.
+
 
 ## Summary
 
-A web challenge in **[event name]** presented a login form with no visible way in. The application built its database query by joining user input into a string, which let me change the query's logic and sign in without valid credentials.
+A web challenge in **[2026]** presented a login form with no visible way in. The application built its database query by joining user input into a string, which let me change the query's logic and sign in without valid credentials.
 
 The finding is a textbook case of injection, ranked in the OWASP Top 10 for years. The interesting part is not the trick itself but how little it takes to prevent it.
 
