@@ -780,8 +780,7 @@ body { background-attachment: fixed; }
 
 /* ---- Hero: network map ---- */
 .netmap {
-  padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem); /* Generous padding all around */
-  width: 60%;
+  padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem); 
   box-sizing: border-box;
   background: color-mix(in srgb, var(--surface) 72%, transparent);
 }
