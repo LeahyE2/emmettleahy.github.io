@@ -782,6 +782,7 @@ body { background-attachment: fixed; }
 .netmap {
   padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem); 
   box-sizing: border-box;
+  width: 100%;
   background: color-mix(in srgb, var(--surface) 72%, transparent);
 }
 
