@@ -1,5 +1,3 @@
-> **Sample entry.** Replace this with your own project. For group work, describe your own contribution, credit your teammates by name only if they agree, and check your course rules before publishing coursework.
-
 ## Summary
 
 A two-site enterprise network designed in Cisco Packet Tracer: a head office and a branch, each with separate VLANs, internet access through NAT, and an encrypted site-to-site VPN between them. The goal was a design that is easy to explain and easy to defend.
