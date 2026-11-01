@@ -1,5 +1,3 @@
-> **Sample entry.** This one is written as a proposal, so its status is *Planned*. Update the status in `projects/index.json` as the work progresses, and rewrite the sections below with your real findings.
-
 ## The question
 
 Operational technology (OT) networks that run industrial processes have long been protected by one idea: keep them physically separate from everything else. Stuxnet showed that an air gap is an assumption, not a control. **If the air gap can fail, what should a security policy require instead?**
