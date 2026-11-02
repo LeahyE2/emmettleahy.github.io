@@ -60,6 +60,7 @@
   const activeTheme = () => root.dataset.theme || (prefersDark.matches ? 'dark' : 'light');
 
   function syncThemeButton() {
+    if (!themeButton) return;
     const next = activeTheme() === 'dark' ? 'light' : 'dark';
     $('.switch-label', themeButton).textContent = activeTheme() === 'dark' ? 'Night mode' : 'Day mode';
     themeButton.dataset.state = activeTheme();
@@ -72,7 +73,7 @@
   }
 
   // The new theme spreads out from the button like ink.
-  themeButton.addEventListener('click', (event) => {
+  if (themeButton) themeButton.addEventListener('click', (event) => {
     const next = activeTheme() === 'dark' ? 'light' : 'dark';
     if (!document.startViewTransition || reduceMotion.matches) return setTheme(next);
     const x = event.clientX || window.innerWidth / 2;
